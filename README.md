@@ -1,16 +1,36 @@
-# React + Vite
+# Assignment 04 - Portfolio App Dockerizada
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
+Aplicación web de portfolio personal desarrollada con React + Vite, dockerizada y desplegada automáticamente en Docker Hub mediante un pipeline de GitHub Actions.
 
-Currently, two official plugins are available:
+## Aplicación
+![App Screenshot](./screenshots/app.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías utilizadas
+- React + Vite
+- Docker + Nginx
+- GitHub Actions (CI/CD)
+- Doppler (gestión de secretos)
 
-## React Compiler
+## Docker Hub
+URL de la imagen: https://hub.docker.com/r/javierdeleon/assignment-04
+![App Screenshot](./screenshots/urltags.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Cómo correr la app localmente con Docker
+```bash
+docker build -t my-app .
+docker pull javierdeleon/arqui2-assignment04:latest
+docker run -p 8080:80 javierdeleon/arqui2-assignment04:latest
+```
+Abrir en el navegador: http://localhost:8080
 
-## Expanding the ESLint configuration
+## Pipeline de GitHub Actions
+El pipeline se ejecuta automáticamente en cada commit a la rama `assignment-04` y realiza:
+1. Build de la imagen Docker
+2. Push a Docker Hub con dos tags:
+   - `latest` (siempre apunta al último commit)
+   - SHA del commit (identificador único por cada build)
+![App Screenshot](./screenshots/workflows.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Imágenes y Tags en Docker Hub
+![Docker Hub Tags](./screenshots/dockerhub.png)
