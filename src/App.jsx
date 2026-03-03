@@ -271,7 +271,7 @@ export default function App() {
       <section style={styles.hero}>
         <div style={styles.heroBg} />
         <div style={styles.avatar}>👨‍💻</div>
-        <h1 style={styles.heroTitle}>Javier Estrada Assignment 04 - Version 2</h1>
+        <h1 style={styles.heroTitle}>Javier Estrada Assignment 04 - Version 3</h1>
         <p style={styles.heroSub}>Full Stack Developer & DevOps Enthusiast</p>
         <p style={styles.heroDesc}>
           Apasionado por construir aplicaciones modernas, pipelines CI/CD y
