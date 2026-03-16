@@ -6,7 +6,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState("");
 
-  const API_URL = "http://localhost:4000";
+  const API_URL = "https://arqui2-production.up.railway.app";
 
   const getItems = async () => {
     const res = await axios.get(`${API_URL}/items`);
