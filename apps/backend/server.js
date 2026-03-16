@@ -7,7 +7,11 @@ const swaggerJsdoc = require("swagger-jsdoc");
 const prisma = new PrismaClient();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://agile-creativity-production.up.railway.app',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+}))
 app.use(express.json());
 
 const options = {
