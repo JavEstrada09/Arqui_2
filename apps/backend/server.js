@@ -1,27 +1,51 @@
 const express = require("express");
 const cors = require("cors");
+const { PrismaClient } = require("@prisma/client");
+const swaggerUi = require("swagger-ui-express");
+const swaggerJsdoc = require("swagger-jsdoc");
 
+const prisma = new PrismaClient();
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
-let items = [];
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Super List API",
+      version: "1.0.0",
+      description: "API for supermarket list"
+    },
+    servers: [
+      {
+        url: "http://localhost:4000"
+      }
+    ]
+  },
+  apis: ["./server.js"]
+};
 
-app.get("/items", (req, res) => {
+const specs = swaggerJsdoc(options);
+
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(specs));
+
+app.get("/items", async (req, res) => {
+  const items = await prisma.item.findMany();
   res.json(items);
 });
 
-app.post("/items", (req, res) => {
-  const item = {
-    id: Date.now(),
-    name: req.body.name,
-    bought: false
-  };
+app.post("/items", async (req, res) => {
+  const { name } = req.body;
 
-  items.push(item);
+  const item = await prisma.item.create({
+    data: { name }
+  });
+
   res.json(item);
 });
 
-app.listen(3000, () => {
-  console.log("API running on port 3000");
+app.listen(4000, () => {
+  console.log("Backend running on port 4000");
 });
