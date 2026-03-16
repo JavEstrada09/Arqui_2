@@ -4,12 +4,18 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   preview: {
-    host: '0.0.0.0',
+    host: true,
     port: 8080,
-    allowedHosts: 'all',
+    allowedHosts: [
+      'all',
+      'agile-creativity-production.up.railway.app'
+    ],
   },
   server: {
-    host: '0.0.0.0',
-    allowedHosts: 'all',
+    host: true,
+    allowedHosts: [
+      'all',
+      'agile-creativity-production.up.railway.app'
+    ],
   },
 })
