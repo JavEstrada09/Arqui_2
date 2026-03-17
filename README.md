@@ -1,16 +1,48 @@
-# React + Vite
+# Assignment 05 - Lista del Súper (Monorepo)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
+Aplicación web de lista del supermercado desarrollada como monorepo con frontend React + Vite, backend Node.js + Express + Prisma, y base de datos PostgreSQL. Desplegada completamente en Railway con secretos gestionados por Doppler.
 
-Currently, two official plugins are available:
+## URLs
+- **Frontend:** https://agile-creativity-production.up.railway.app
+- **Backend:** https://arqui2-production.up.railway.app
+- **Documentación API (Swagger):** https://arqui2-production.up.railway.app/docs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Frontend
+![Frontend](./screenshots/FINALFRONTED.png)
 
-## React Compiler
+## Conexión Frontend y Backend
+![Conexión](./screenshots/ConexionFrontendyBackend.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Backend
+![Backend](./screenshots/backendbien.png)
 
-## Expanding the ESLint configuration
+## Base de Datos
+![Base de Datos](./screenshots/migrationbasededatos.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Migraciones
+![Migraciones](./screenshots/MigrationPgAdmin.png)
+
+## SQL Funcionando
+![SQL](./screenshots/SQLFUNCIONANDO.png)
+
+## Doppler
+![Doppler](./screenshots/DOPPLER.png)
+
+## Tecnologías utilizadas
+- React + Vite (Frontend)
+- Node.js + Express (Backend)
+- Prisma ORM (Migraciones)
+- PostgreSQL (Base de datos)
+- Swagger (Documentación API)
+- Doppler (Gestión de secretos)
+- Railway (Deployment)
+
+## Estructura del Monorepo
+```
+assignment-05/
+├── apps/
+│   ├── frontend/    ← React + Vite
+│   └── backend/     ← Node.js + Express + Prisma
+└── README.md
+```
