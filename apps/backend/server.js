@@ -31,6 +31,8 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(specs));
  *       200:
  *         description: Servidor funcionando
  */
+app.get("/", (req, res) => res.json({ message: "Super List API", docs: "/docs", health: "/health" }));
+
 app.get("/health", (req, res) => res.json({ status: "ok" }));
 
 /**
