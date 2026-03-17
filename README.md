@@ -9,7 +9,7 @@ Aplicación web de lista del supermercado desarrollada como monorepo con fronten
 - **Documentación API (Swagger):** https://arqui2-production.up.railway.app/docs
 
 ## Frontend
-![Frontend](./screenshots/FINALFRONTED.png)
+![Frontend](./screenshots/FRONTEDRAILWAIL.png)
 
 ## Conexión Frontend y Backend
 ![Conexión](./screenshots/ConexionFrontendyBackend.png)
