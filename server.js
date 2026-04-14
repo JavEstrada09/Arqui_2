@@ -40,12 +40,21 @@ const root = {
 
 const app = express();
 
-app.use("/graphql", graphqlHTTP({
-  schema,
-  rootValue: root,
-  graphiql: true,
-}));
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema,
+    rootValue: root,
+    graphiql: true,
+  })
+);
 
-app.listen(4000, () => {
-  console.log("http://localhost:4000/graphql");
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+app.get("/", (req, res) => {
+  res.send("API funcionando 🚀 usa /graphql");
 });
