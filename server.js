@@ -57,3 +57,7 @@ app.listen(PORT, () => {
 app.get("/", (req, res) => {
   res.send("API funcionando 🚀 usa /graphql");
 });
+app.use((err, req, res, next) => {
+  console.error("ERROR REAL:", err);
+  res.status(500).send(err.message);
+});
